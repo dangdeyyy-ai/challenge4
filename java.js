@@ -38,6 +38,10 @@ function closeModal() {
 }
 
 cards.forEach((card, i) => {
+  cards.forEach((card) => {
+    const img = new Image();
+    img.src = card.querySelector("img").src;
+  });
   card.addEventListener("click", (e) => {
     e.preventDefault();
     openAt(i);

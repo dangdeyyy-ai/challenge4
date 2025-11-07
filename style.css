@@ -119,6 +119,12 @@ body {
   display: block;
 }
 
+#modalImg {
+  background-color: black;
+  min-width: 100px;
+  min-height: 100px;
+}
+
 .back,
 .next {
   background-color: rgb(198, 204, 209);
