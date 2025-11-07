@@ -54,3 +54,11 @@ backBtn.addEventListener("click", () =>
 );
 
 nextBtn.addEventListener("click", () => openAt((current + 1) % cards.length));
+
+window.addEventListener("load", () => {
+  cards.forEach((card) => {
+    const src = card.querySelector("img").src;
+    const preload = new Image();
+    preload.src = src;
+  });
+});

@@ -77,6 +77,26 @@ body {
   transform: translateY(0);
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .modal {
   position: fixed;
   inset: 0;
@@ -87,6 +107,7 @@ body {
   justify-content: center;
   z-index: 100;
   padding: 20px;
+  animation: fadeIn 0.3s ease;
 }
 
 .modal.open {
@@ -94,7 +115,7 @@ body {
 }
 
 .modal-content {
-  width: clamp(320px, 90vw, 1300px);
+  width: clamp(320px, 60vw, 1300px);
   max-height: 90vh;
   border-radius: 12px;
   overflow: hidden;
@@ -108,8 +129,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  background-color: black;
+  padding: 20px 0;
+  gap: 40px;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .modal-top-content img {
@@ -117,19 +139,21 @@ body {
   max-height: 70vh;
   object-fit: contain;
   display: block;
+  animation: zoomIn 0.3s ease;
 }
 
 #modalImg {
   background-color: black;
   min-width: 100px;
   min-height: 100px;
+  border-radius: 20px;
 }
 
 .back,
 .next {
   background-color: rgb(198, 204, 209);
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 9999px;
   display: flex;
   justify-content: center;
@@ -139,6 +163,8 @@ body {
 .back:hover,
 .next:hover {
   background-color: aliceblue;
+  transform: scale(1.1);
+  transition: 0.2s ease;
 }
 
 .back-icon,
@@ -148,7 +174,7 @@ body {
 }
 
 .modal-bottom-content {
-  background-color: #0b1220;
+  background-color: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: space-between;
   align-items: center;
