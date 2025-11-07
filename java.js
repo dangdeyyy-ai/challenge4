@@ -27,6 +27,12 @@ function dotProcess(index) {
   });
 }
 
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
 function closeModal() {
   modal.classList.remove("open");
 }
